@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>📊 SocialPulse</h2>
+
+<a href="#">Dashboard</a>
+
+<a href="#">Analytics</a>
+
+<a href="/compare">Compare</a>
+
+<a href="#">Reports</a>
+
+</div>
+
+<div class="main">
+
+<div class="topbar">
+
+<h1>{{ data.name }}</h1>
+
+<button>Analyze Another</button>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Subscribers</h3>
+
+<h2>{{ data.subscribers }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Total Views</h3>
+
+<h2>{{ data.views }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Videos</h3>
+
+<h2>{{ data.videos }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>AI Score</h3>
+
+<h2>{{ data.score }}</h2>
+
+</div>
+
+</div>
+
+<div class="chart-box">
+
+<h2>Analytics Overview</h2>
+
+<canvas id="growthChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
