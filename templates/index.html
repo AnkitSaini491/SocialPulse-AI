@@ -1,1 +1,50 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialPulse AI</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>📊 SocialPulse AI</h1>
+
+        <p>
+            Analyze Any YouTube Channel & Instagram Profile
+        </p>
+
+        <form action="/analyze" method="POST">
+
+            <input
+                type="text"
+                name="channel"
+                placeholder="Enter YouTube Channel Name"
+                required>
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
