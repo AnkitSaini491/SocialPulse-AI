@@ -216,3 +216,34 @@ padding:25px;
 border-radius:15px;
 
 }
+.profile{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.profile img{
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+border:5px solid #3b82f6;
+
+margin-bottom:15px;
+
+}
+
+.profile p{
+
+color:#94a3b8;
+
+max-width:700px;
+
+margin:auto;
+
+}
