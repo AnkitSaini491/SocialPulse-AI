@@ -300,3 +300,80 @@ color:#3b82f6;
 text-decoration:none;
 
 }
+.analytics{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+margin:40px 0;
+
+}
+
+.analytics-card{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.3s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.35);
+
+}
+
+.analytics-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.analytics-card h3{
+
+color:#94a3b8;
+
+margin-bottom:10px;
+
+}
+
+.analytics-card h1{
+
+font-size:34px;
+
+color:#3b82f6;
+
+}
+
+.ai-box{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:20px;
+
+margin-top:40px;
+
+}
+
+.ai-box h2{
+
+margin-bottom:20px;
+
+}
+
+.ai-box ul{
+
+padding-left:20px;
+
+line-height:2;
+
+color:#cbd5e1;
+
+}
