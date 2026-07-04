@@ -93,6 +93,31 @@ rel="stylesheet">
 <h2>Analytics Overview</h2>
 
 <canvas id="growthChart"></canvas>
+  <h2 style="margin-top:40px;">Latest Videos</h2>
+
+<div class="video-grid">
+
+{% for video in videos %}
+
+<div class="video-card">
+
+<img src="{{video.thumbnail}}">
+
+<h4>{{video.title}}</h4>
+
+<a target="_blank"
+
+href="https://youtube.com/watch?v={{video.videoId}}">
+
+Watch Video
+
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
 
 </div>
 
