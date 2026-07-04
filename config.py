@@ -1,1 +1,3 @@
-API_KEY = "YOUR_API_KEY"
+import os
+
+API_KEY = os.getenv("YOUTUBE_API_KEY")
