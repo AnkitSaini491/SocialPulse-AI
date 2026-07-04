@@ -6,16 +6,17 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("index.html")
-
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    channel = request.form.get("channel")
+
+    channel = request.form["channel"]
+
     data = get_channel_data(channel)
-    return render_template("dashboard.html", data=data)
 
-@app.route("/compare")
-def compare():
-    return render_template("compare.html")
+    if data is None:
+        return "Channel Not Found"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    return render_template(
+        "dashboard.html",
+        data=data
+    )
