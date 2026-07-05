@@ -99,3 +99,30 @@ def get_latest_videos(channel_id):
             })
 
     return videos
+    def get_top_video(channel_id):
+
+    url = (
+        f"https://www.googleapis.com/youtube/v3/search"
+        f"?key={API_KEY}"
+        f"&channelId={channel_id}"
+        f"&part=snippet"
+        f"&order=viewCount"
+        f"&maxResults=1"
+    )
+
+    response = requests.get(url).json()
+
+    if "items" not in response or len(response["items"]) == 0:
+        return None
+
+    item = response["items"][0]
+
+    return {
+
+        "title": item["snippet"]["title"],
+
+        "thumbnail": item["snippet"]["thumbnails"]["high"]["url"],
+
+        "videoId": item["id"]["videoId"]
+
+    }
