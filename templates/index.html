@@ -26,6 +26,41 @@
             <img class="logo"
                 src="{{ url_for('static', filename='logo.png') }}"
                 alt="Logo">
+            <body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <!-- Logo yaha rakho -->
+        <img
+            class="logo"
+            src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png"
+            alt="SocialPulse AI Logo">
+
+        <h1>SocialPulse AI</h1>
+
+        <p>Analyze Any YouTube Channel Instantly</p>
+
+        <form action="/analyze" method="POST">
+
+            <input
+                type="text"
+                name="channel"
+                placeholder="Enter YouTube Channel Name"
+                required>
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
 
             <h1>SocialPulse AI</h1>
 
