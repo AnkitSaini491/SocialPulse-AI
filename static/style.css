@@ -158,3 +158,11 @@ width:80px;
 }
 
 }
+
+.logo{
+    width:90px;
+    height:90px;
+    margin-bottom:20px;
+    border-radius:20px;
+    object-fit:cover;
+}
