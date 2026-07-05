@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <div id="loader">
 
-<h1>📊 SocialPulse AI</h1>
-
-</div>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SocialPulse AI</title>
 
     <link rel="stylesheet"
@@ -22,33 +19,39 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="hero">
+        <div class="hero">
 
-        <h1>📊 SocialPulse AI</h1>
+            <img class="logo"
+                src="{{ url_for('static', filename='logo.png') }}"
+                alt="Logo">
 
-        <p>
-            Analyze Any YouTube Channel & Instagram Profile
-        </p>
+            <h1>SocialPulse AI</h1>
 
-        <form action="/analyze" method="POST">
+            <p>
+                Analyze Any YouTube Channel Instantly
+            </p>
 
-            <input
-                type="text"
-                name="channel"
-                placeholder="Enter YouTube Channel Name"
-                required>
+            <form action="/analyze" method="POST">
 
-            <button type="submit">
-                Analyze
-            </button>
+                <input
+                    type="text"
+                    name="channel"
+                    placeholder="Enter YouTube Channel Name"
+                    required>
 
-        </form>
+                <button type="submit">
+
+                    Analyze
+
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
-
-</div>
 
 </body>
 
