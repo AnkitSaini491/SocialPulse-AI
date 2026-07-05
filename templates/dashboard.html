@@ -3,205 +3,263 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SocialPulse AI Dashboard</title>
+    <title>SocialPulse AI Dashboard</title>
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- Sidebar -->
+    <!-- Sidebar -->
 
-<div class="sidebar">
+    <div class="sidebar">
 
-<h2>📊 SocialPulse</h2>
+        <h2>📊 SocialPulse</h2>
 
-<a href="#">Dashboard</a>
+        <a href="/">🏠 Dashboard</a>
+        <a href="#">📈 Analytics</a>
+        <a href="/compare">⚖ Compare</a>
+        <a href="#">📄 Reports</a>
 
-<a href="#">Analytics</a>
+    </div>
 
-<a href="/compare">Compare</a>
+    <!-- Main -->
 
-<a href="#">Reports</a>
+    <div class="main">
 
-</div>
+        <!-- Topbar -->
 
-<!-- Main -->
+        <div class="topbar">
 
-<div class="main">
+            <h1>Dashboard</h1>
 
-<!-- Topbar -->
+            <button onclick="window.location='/'">
+                Analyze Another
+            </button>
 
-<div class="topbar">
+        </div>
 
-<h1>Dashboard</h1>
+        <!-- Profile -->
 
-<button onclick="window.location='/'">
-Analyze Another
-</button>
+        <div class="profile">
 
-</div>
+            <img src="{{ data.logo }}">
 
-<!-- Profile -->
+            <h1>{{ data.name }}</h1>
 
-<div class="profile">
+            <p>{{ data.description }}</p>
 
-<img src="{{data.logo}}">
+        </div>
 
-<h1>{{data.name}}</h1>
+        <!-- Channel Information -->
 
-<p>{{data.description}}</p>
+        <div class="channel-info">
 
-</div>
+            <div class="info-box">
 
-<!-- Cards -->
+                🌍 Country
 
-<div class="cards">
+                <h3>{{ data.country }}</h3>
 
-<div class="card">
+            </div>
 
-<h3>Subscribers</h3>
+            <div class="info-box">
 
-<h2>{{data.subscribers}}</h2>
+                📅 Joined
 
-</div>
+                <h3>{{ data.published }}</h3>
 
-<div class="card">
+            </div>
 
-<h3>Total Views</h3>
+            <div class="info-box">
 
-<h2>{{data.views}}</h2>
+                ⭐ AI Score
 
-</div>
+                <h3>{{ data.score }}</h3>
 
-<div class="card">
+            </div>
 
-<h3>Videos</h3>
+            <div class="info-box">
 
-<h2>{{data.videos}}</h2>
+                ✔ Status
 
-</div>
+                <h3>Active</h3>
 
-<div class="card">
+            </div>
 
-<h3>AI Score</h3>
+        </div>
 
-<h2>{{data.score}}</h2>
+        <!-- Statistics -->
 
-</div>
+        <div class="cards">
 
-</div>
+            <div class="card">
 
-<!-- Analytics -->
+                <h3>Subscribers</h3>
 
-<div class="analytics">
+                <h2>{{ data.subscribers }}</h2>
 
-<div class="analytics-card">
+            </div>
 
-<h3>Growth Score</h3>
+            <div class="card">
 
-<h1>92%</h1>
+                <h3>Total Views</h3>
 
-</div>
+                <h2>{{ data.views }}</h2>
 
-<div class="analytics-card">
+            </div>
 
-<h3>Engagement</h3>
+            <div class="card">
 
-<h1>8.7%</h1>
+                <h3>Videos</h3>
 
-</div>
+                <h2>{{ data.videos }}</h2>
 
-<div class="analytics-card">
+            </div>
 
-<h3>Upload Rate</h3>
+            <div class="card">
 
-<h1>3 / Week</h1>
+                <h3>Channel Rating</h3>
 
-</div>
+                <h2>9.8 / 10</h2>
 
-<div class="analytics-card">
+            </div>
 
-<h3>Performance</h3>
+        </div>
 
-<h1>Excellent</h1>
+        <!-- Analytics -->
 
-</div>
+        <div class="analytics">
 
-</div>
+            <div class="analytics-card">
 
-<!-- Chart -->
+                <h3>Growth Score</h3>
 
-<div class="chart-box">
+                <h1>92%</h1>
 
-<h2>Analytics Overview</h2>
+            </div>
 
-<canvas id="growthChart"></canvas>
+            <div class="analytics-card">
 
-</div>
+                <h3>Engagement</h3>
 
-<!-- AI -->
+                <h1>8.7%</h1>
 
-<div class="ai-box">
+            </div>
 
-<h2>🤖 AI Insights</h2>
+            <div class="analytics-card">
 
-<ul>
+                <h3>Upload Rate</h3>
 
-<li>✅ Channel growth is increasing.</li>
+                <h1>3/Week</h1>
 
-<li>✅ Best upload time : 7 PM</li>
+            </div>
 
-<li>✅ Best upload day : Friday</li>
+            <div class="analytics-card">
 
-<li>✅ Shorts perform better than long videos.</li>
+                <h3>Performance</h3>
 
-<li>✅ High engagement detected.</li>
+                <h1>Excellent</h1>
 
-</ul>
+            </div>
 
-</div>
+        </div>
 
-<!-- Videos -->
+        <!-- Chart -->
 
-<h2 style="margin-top:40px;">Latest Videos</h2>
+        <div class="chart-box">
 
-<div class="video-grid">
+            <h2>📈 Analytics Overview</h2>
 
-{% for video in videos %}
+            <canvas id="growthChart"></canvas>
 
-<div class="video-card">
+        </div>
 
-<img src="{{video.thumbnail}}">
+        <!-- AI Insights -->
 
-<h4>{{video.title}}</h4>
+        <div class="ai-box">
 
-<a href="https://youtube.com/watch?v={{video.videoId}}"
-target="_blank">
+            <h2>🤖 AI Insights</h2>
 
-Watch Video
+            <ul>
 
-</a>
+                <li>✅ Channel growth is increasing.</li>
 
-</div>
+                <li>✅ Best upload time: 7 PM</li>
 
-{% endfor %}
+                <li>✅ Best upload day: Friday</li>
 
-</div>
+                <li>✅ Shorts perform better than long videos.</li>
 
-</div>
+                <li>✅ High engagement detected.</li>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </ul>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+        </div>
+
+        <!-- Top Video -->
+
+        {% if top_video %}
+
+        <div class="top-video">
+
+            <h2>🏆 Top Performing Video</h2>
+
+            <img src="{{ top_video.thumbnail }}">
+
+            <h3>{{ top_video.title }}</h3>
+
+            <a href="https://youtube.com/watch?v={{ top_video.videoId }}"
+                target="_blank">
+
+                ▶ Watch Video
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+        <!-- Latest Videos -->
+
+        <h2 style="margin:40px 0 20px;">🎥 Latest Videos</h2>
+
+        <div class="video-grid">
+
+            {% for video in videos %}
+
+            <div class="video-card">
+
+                <img src="{{ video.thumbnail }}">
+
+                <h4>{{ video.title }}</h4>
+
+                <a href="https://youtube.com/watch?v={{ video.videoId }}"
+                    target="_blank">
+
+                    Watch Video
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
