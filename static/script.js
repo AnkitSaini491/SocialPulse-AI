@@ -1,9 +1,62 @@
+// ===== Count Animation =====
 
-const ctx = document.getElementById('growthChart');
+function animateValue(element, start, end, duration) {
 
-new Chart(ctx,{
+    let startTime = null;
 
-type:'line',
+    function animation(currentTime) {
+
+        if (!startTime) startTime = currentTime;
+
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        element.innerHTML = Math.floor(progress * (end - start) + start);
+
+        if (progress < 1) {
+            requestAnimationFrame(animation);
+        }
+
+    }
+
+    requestAnimationFrame(animation);
+
+}
+
+
+// ===== Animate Cards =====
+
+window.onload = () => {
+
+    document.querySelectorAll(".card").forEach((card, index) => {
+
+        card.style.opacity = "0";
+
+        card.style.transform = "translateY(30px)";
+
+        setTimeout(() => {
+
+            card.style.transition = ".5s";
+
+            card.style.opacity = "1";
+
+            card.style.transform = "translateY(0)";
+
+        }, index * 150);
+
+    });
+
+};
+
+
+// ===== Chart =====
+
+const chart = document.getElementById("growthChart");
+
+if(chart){
+
+new Chart(chart,{
+
+type:"line",
 
 data:{
 
@@ -13,11 +66,15 @@ datasets:[{
 
 label:"Growth",
 
-data:[12,25,18,35,42,55],
+data:[1200,1800,2500,3100,4500,6000],
 
-borderWidth:3,
+borderColor:"#38bdf8",
 
-fill:false
+backgroundColor:"rgba(56,189,248,.2)",
+
+fill:true,
+
+tension:.4
 
 }]
 
@@ -25,8 +82,48 @@ fill:false
 
 options:{
 
-responsive:true
+responsive:true,
+
+plugins:{
+
+legend:{
+
+labels:{
+
+color:"white"
+
+}
+
+}
+
+},
+
+scales:{
+
+x:{
+
+ticks:{
+
+color:"white"
+
+}
+
+},
+
+y:{
+
+ticks:{
+
+color:"white"
+
+}
+
+}
+
+}
 
 }
 
 });
+
+}
